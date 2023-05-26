@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(AgentFragment())
-
+        binding.bottomNavigationView.menu.getItem(2).isChecked = true
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.navigation_agent -> replaceFragment(AgentFragment())
