@@ -1,13 +1,9 @@
-package com.ibrahimcanerdogan.valorantguideapp
+package com.ibrahimcanerdogan.valorantguideapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.ibrahimcanerdogan.valorantguideapp.R
 import com.ibrahimcanerdogan.valorantguideapp.databinding.ActivityMainBinding
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.AgentFragment
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.MapsFragment
