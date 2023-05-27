@@ -2,10 +2,11 @@ package com.ibrahimcanerdogan.valorantguideapp.data.model.agent
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
 
 @Entity(
-    tableName = "agent"
+    tableName = "agent_data"
 )
 data class AgentData(
     @PrimaryKey
@@ -29,8 +30,6 @@ data class AgentData(
     val agentKillFeedPortrait: String,
     @SerializedName("background")
     val agentBackground: String?,
-    @SerializedName("backgroundGradientColors")
-    val agentBackgroundGradientColors: List<String>,
     @SerializedName("isPlayableCharacter")
     val agentIsPlayableCharacter: Boolean,
     @SerializedName("role")
