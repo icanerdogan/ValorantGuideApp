@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentAgentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AgentFragment : Fragment() {
     private var _binding: FragmentAgentBinding? = null
     private val binding get() = _binding!!

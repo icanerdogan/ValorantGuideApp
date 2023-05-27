@@ -9,7 +9,9 @@ import com.ibrahimcanerdogan.valorantguideapp.view.fragment.AgentFragment
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.MapsFragment
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.OtherFragment
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.WeaponFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
