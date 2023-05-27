@@ -5,12 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".view.fragment.AgentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerAgent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:text="Agents Coming Soon..." />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

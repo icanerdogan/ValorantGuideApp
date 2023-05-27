@@ -1,10 +1,9 @@
-package com.ibrahimcanerdogan.valorantguideapp.data.remote
+package com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource
 
 import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.Agent
 import retrofit2.Response
-import retrofit2.http.GET
 
-interface APIService {
-    @GET("v1/agents")
+interface AgentRemoteDataSource {
+
     suspend fun getAllAgents() : Response<Agent>
 }
