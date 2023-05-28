@@ -30,6 +30,8 @@ data class AgentData(
     val agentKillFeedPortrait: String,
     @SerializedName("background")
     val agentBackground: String?,
+    @SerializedName("backgroundGradientColors")
+    val agentBackgroundGradientColors: List<String>?,
     @SerializedName("isPlayableCharacter")
     val agentIsPlayableCharacter: Boolean,
     @SerializedName("role")

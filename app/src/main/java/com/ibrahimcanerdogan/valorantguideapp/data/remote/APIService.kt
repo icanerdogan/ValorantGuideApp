@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface APIService {
     @GET("v1/agents")
-    suspend fun getAllAgents() : Response<Agent>
+    suspend fun getAgentRemote() : Response<Agent>
 }

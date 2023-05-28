@@ -1,6 +1,7 @@
 package com.ibrahimcanerdogan.valorantguideapp.view.dependencyinjection
 
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.AgentRepositoryImpl
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.AgentLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.AgentRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.agent.AgentRepository
 import dagger.Module
@@ -16,8 +17,9 @@ class RepositoryModule {
     @Singleton
     @Provides
     fun provideAgentRepository(
-        agentRemoteDataSource: AgentRemoteDataSource
+        agentRemoteDataSource: AgentRemoteDataSource,
+        agentLocalDataSource: AgentLocalDataSource
     ) : AgentRepository {
-        return AgentRepositoryImpl(agentRemoteDataSource)
+        return AgentRepositoryImpl(agentRemoteDataSource, agentLocalDataSource)
     }
 }

@@ -68,14 +68,15 @@ class Converters {
     }
 
     @TypeConverter
-    fun fromAgentRole(role: AgentRole): String {
+    fun fromAgentRole(role: AgentRole?): String? {
         return gson.toJson(role)
     }
 
     @TypeConverter
-    fun toAgentRole(roleString: String): AgentRole {
+    fun toAgentRole(roleString: String?): AgentRole? {
         return gson.fromJson(roleString, AgentRole::class.java)
     }
+
 
     @TypeConverter
     fun fromAgentVoiceLine(voiceLine: AgentVoiceLine): String {
@@ -85,5 +86,16 @@ class Converters {
     @TypeConverter
     fun toAgentVoiceLine(voiceLineString: String): AgentVoiceLine {
         return gson.fromJson(voiceLineString, AgentVoiceLine::class.java)
+    }
+
+    @TypeConverter
+    fun fromStringList(stringList: List<String>?): String {
+        return gson.toJson(stringList)
+    }
+
+    @TypeConverter
+    fun toStringList(stringListString: String): List<String>? {
+        val listType = object : TypeToken<List<String>?>() {}.type
+        return gson.fromJson(stringListString, listType)
     }
 }

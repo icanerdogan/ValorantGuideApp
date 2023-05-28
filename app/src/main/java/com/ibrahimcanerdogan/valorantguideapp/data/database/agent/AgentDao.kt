@@ -5,14 +5,16 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentData
+import com.ibrahimcanerdogan.valorantguideapp.util.Resource
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AgentDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(agent: AgentData)
+    suspend fun saveAgentDatabase(agentList: List<AgentData>)
 
     @Query("SELECT * FROM agent_data")
-    fun getAllArticles(): Flow<List<AgentData>>
+    fun getAgentListDatabase(): List<AgentData>
+
 }

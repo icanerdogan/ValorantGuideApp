@@ -50,14 +50,15 @@ class AgentFragment : Fragment() {
             when(response) {
                 is Resource.Success -> {
                     setProgressBar(false)
-                    response.data.let {
-                        agentAdapter.setData(it!!.agents.toList())
+                    response.data.let { listAgentData ->
+                        agentAdapter.setData(listAgentData!!)
                     }
                 }
                 is Resource.Error -> {
                     setProgressBar(false)
-                    response.message?.let {
-                        Toast.makeText(activity, "An error occurred : $it", Toast.LENGTH_LONG).show()
+                    response.message?.let { errorMessage ->
+                        Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
+                        println("An error occurred : $errorMessage")
                     }
                 }
                 is Resource.Loading -> {
