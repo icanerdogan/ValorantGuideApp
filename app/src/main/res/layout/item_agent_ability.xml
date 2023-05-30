@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BlackTransparent70">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/ValorantPinkRed"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Ability Name - 1-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAgentAbilityName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:text="Tailwind"
+                        android:textColor="@color/ValorantWhite"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <!-- Ability Icon - 1-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAgentAbility1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/abilityicon" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Cancel Button -->
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/buttonAgentAbilityClose"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="end"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/icon_cancel_light" />
+
+                    <!-- Ability Description - 1-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAgentAbilityDescription1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/ValorantWhite"
+                        android:textSize="12sp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Ability Name - 2-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAgentAbilityName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:text="Tailwind"
+                        android:textColor="@color/ValorantWhite"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <!-- Ability Icon - 2-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAgentAbility2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/abilityicon" />
+                </LinearLayout>
+
+
+                        <!-- Ability Description - 2-->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewAgentAbilityDescription2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/ValorantWhite"
+                            android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Ability Name - 2-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAgentAbilityName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:text="Tailwind"
+                        android:textColor="@color/ValorantWhite"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <!-- Ability Icon - 2-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAgentAbility3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/abilityicon" />
+                </LinearLayout>
+
+                        <!-- Ability Description - 3-->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewAgentAbilityDescription3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/ValorantWhite"
+                            android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Ability Name - 4-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAgentAbilityName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:text="Tailwind"
+                        android:textColor="@color/ValorantWhite"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <!-- Ability Icon - 4-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewAgentAbility4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/abilityicon" />
+                </LinearLayout>
+                        <!-- Ability Description - 4-->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewAgentAbilityDescription4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/ValorantWhite"
+                            android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>
