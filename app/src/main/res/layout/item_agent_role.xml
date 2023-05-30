@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardCornerRadius="20dp"
+        app:strokeColor="@color/ValorantWhite"
+        app:strokeWidth="1dp"
         android:layout_gravity="center">
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,8 +30,8 @@
                 <!-- Role Icone -->
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageViewAgentRoleIcon"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
                     android:src="@drawable/displayicon" />
@@ -43,7 +45,6 @@
                         android:id="@+id/textViewAgentRoleName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="start|center"
                         android:fontFamily="@font/chakrapetch_bold"
                         android:text="Initiator"
                         android:textColor="@color/ValorantWhite"
@@ -54,7 +55,6 @@
                         android:id="@+id/textViewAgentRoleDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/chakrapetch_medium"
                         android:text="Initiators challenge angles by setting up their team to enter contested ground and push defenders away."
                         android:textColor="@color/ValorantWhite"

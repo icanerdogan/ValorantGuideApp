@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardCornerRadius="20dp"
+        app:strokeColor="@color/ValorantWhite"
+        app:strokeWidth="1dp"
         android:layout_gravity="center">
 
         <!-- Portrait -->
