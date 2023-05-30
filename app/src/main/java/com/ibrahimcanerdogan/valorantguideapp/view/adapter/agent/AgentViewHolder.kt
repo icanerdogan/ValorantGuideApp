@@ -38,7 +38,7 @@ class AgentViewHolder(
                 ContextCompat.getColor(context, R.color.ValorantMatRed),
                 ContextCompat.getColor(context, R.color.ValorantMatRed),
                 ContextCompat.getColor(context, R.color.ValorantPinkRed),
-                ContextCompat.getColor(context, R.color.ValorantTransparent)
+                ContextCompat.getColor(context, R.color.ValorantBlack)
             )
         )
         binding.frameLayoutItemAgent.background = agentGradientDrawable
