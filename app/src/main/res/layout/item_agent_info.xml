@@ -45,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
+                android:fontFamily="@font/chakrapetch_semibold"
                 android:text="Gekko the Angeleno leads a tight-knit crew of calamitous creatures. His buddies bound forward, scattering enemies out of the way, with Gekko chasing them down to regroup and go again."
                 android:textColor="@color/White"
                 android:textAppearance="?attr/textAppearanceBody2"/>
