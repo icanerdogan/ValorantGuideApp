@@ -79,7 +79,7 @@ class AgentViewHolder(
             .load(agentData.agentAbilities[3].abilityDisplayIcon)
             .into(binding.agentItemAbility.imageViewAgentAbility4)
 
-        binding.agentItemAbility.buttonAgentAbilityClose.setOnClickListener {
+        binding.agentItemAbility.frameLayoutItemAgentAbility.setOnClickListener {
             binding.agentItemAbility.root.visibility = View.INVISIBLE
         }
         binding.buttonAbility.setOnClickListener {
@@ -93,7 +93,7 @@ class AgentViewHolder(
         Glide.with(binding.agentItemRole.imageViewAgentRoleIcon.context)
             .load(agentData.agentRole?.displayIcon)
             .into(binding.agentItemRole.imageViewAgentRoleIcon)
-        binding.agentItemRole.buttonAgentRoleClose.setOnClickListener {
+        binding.agentItemRole.frameLayoutItemAgentRole.setOnClickListener {
             binding.agentItemRole.root.visibility = View.INVISIBLE
         }
         binding.buttonRole.setOnClickListener {
@@ -130,7 +130,7 @@ class AgentViewHolder(
             )
         )
         binding.agentItemInfo.imageViewAgentInfoPortrait.background = infoDialogBackground2
-        binding.agentItemInfo.buttonAgentInfoClose.setOnClickListener {
+        binding.agentItemInfo.frameLayoutItemAgentInfo.setOnClickListener {
             binding.agentItemInfo.root.visibility = View.INVISIBLE
         }
         binding.buttonInfo.setOnClickListener {
