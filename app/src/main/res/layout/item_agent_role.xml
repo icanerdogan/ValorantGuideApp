@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frameLayoutItemAgentRole"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/BlackTransparent70">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:strokeColor="@color/ValorantWhite"
+        app:strokeWidth="1dp"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:background="@color/ValorantPinkRed"
+            android:padding="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+                <!-- Role Icone -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewAgentRoleIcon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/displayicon" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+                    <!-- Name -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAgentRoleName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/chakrapetch_bold"
+                        android:text="Initiator"
+                        android:textColor="@color/ValorantWhite"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:background="@android:color/transparent"/>
+                    <!-- Description -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAgentRoleDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/chakrapetch_medium"
+                        android:text="Initiators challenge angles by setting up their team to enter contested ground and push defenders away."
+                        android:textColor="@color/ValorantWhite"
+                        android:textAppearance="?attr/textAppearanceBody2" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>
