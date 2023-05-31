@@ -3,7 +3,10 @@ package com.ibrahimcanerdogan.valorantguideapp.view.dependencyinjection
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.AgentRepositoryImpl
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.AgentLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.AgentRemoteDataSource
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.MapRepositoryImpl
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.agent.AgentRepository
+import com.ibrahimcanerdogan.valorantguideapp.domain.repository.map.MapRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,5 +24,13 @@ class RepositoryModule {
         agentLocalDataSource: AgentLocalDataSource
     ) : AgentRepository {
         return AgentRepositoryImpl(agentRemoteDataSource, agentLocalDataSource)
+    }
+
+    @Singleton
+    @Provides
+    fun provideMapRepository(
+        mapRemoteDataSource: MapRemoteDataSource
+    ) : MapRepository {
+        return MapRepositoryImpl(mapRemoteDataSource)
     }
 }

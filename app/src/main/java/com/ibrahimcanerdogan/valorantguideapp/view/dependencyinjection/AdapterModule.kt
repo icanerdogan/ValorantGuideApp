@@ -1,6 +1,7 @@
 package com.ibrahimcanerdogan.valorantguideapp.view.dependencyinjection
 
 import com.ibrahimcanerdogan.valorantguideapp.view.adapter.agent.AgentAdapter
+import com.ibrahimcanerdogan.valorantguideapp.view.adapter.map.MapAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,4 +17,11 @@ class AdapterModule {
     fun provideAgentAdapter() : AgentAdapter {
         return AgentAdapter()
     }
+
+    @Singleton
+    @Provides
+    fun provideMapAdapter() : MapAdapter {
+        return MapAdapter()
+    }
+
 }

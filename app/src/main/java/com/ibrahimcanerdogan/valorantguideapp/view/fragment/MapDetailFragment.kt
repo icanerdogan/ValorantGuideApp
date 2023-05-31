@@ -5,38 +5,67 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.ibrahimcanerdogan.valorantguideapp.R
+import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentMapDetailBinding
+import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentMapsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
+private const val MAP_NAME = "param1"
+private const val MAP_COORDINATE = "param2"
+private const val MAP_SPLASH_ICON_URL = "param1"
+private const val MAP_DISPLAY_ICON_URL = "param2"
 /**
  * A simple [Fragment] subclass.
  * Use the [MapDetailFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 class MapDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
+    private var _binding: FragmentMapDetailBinding? = null
+    private val binding get() = _binding!!
+
     private var param1: String? = null
     private var param2: String? = null
-
+    private var param3: String? = null
+    private var param4: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            param1 = it.getString(MAP_NAME)
+            param2 = it.getString(MAP_COORDINATE)
+            param3 = it.getString(MAP_SPLASH_ICON_URL)
+            param4 = it.getString(MAP_DISPLAY_ICON_URL)
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map_detail, container, false)
+    ): View {
+        _binding = FragmentMapDetailBinding.inflate(inflater, container, false)
+        Glide.with(binding.root.context)
+            .load(MAP_SPLASH_ICON_URL)
+            .into(binding.imageViewMapSplash)
+        Glide.with(binding.root.context)
+            .load(MAP_DISPLAY_ICON_URL)
+            .into(binding.imageViewMap)
+        binding.textViewMapName.text = MAP_NAME
+        binding.textViewCoordinates.text = MAP_COORDINATE
+        binding.frameLayoutMapDetail.setOnClickListener {
+            closeFragment()
+        }
+        return binding.root
     }
+
+    private fun closeFragment() {
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .remove(this)
+            .commit()
+    }
+
 
     companion object {
         /**
@@ -49,11 +78,13 @@ class MapDetailFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(param1: String, param2: String, param3: String, param4: String?) =
             MapDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(MAP_NAME, param1)
+                    putString(MAP_COORDINATE, param2)
+                    putString(MAP_SPLASH_ICON_URL, param3)
+                    putString(MAP_DISPLAY_ICON_URL, param4)
                 }
             }
     }

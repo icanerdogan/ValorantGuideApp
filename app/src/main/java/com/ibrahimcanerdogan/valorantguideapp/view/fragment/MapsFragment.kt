@@ -5,56 +5,76 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ibrahimcanerdogan.valorantguideapp.R
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentMapsBinding
+import com.ibrahimcanerdogan.valorantguideapp.util.Resource
+import com.ibrahimcanerdogan.valorantguideapp.view.adapter.map.MapAdapter
+import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.map.MapViewModel
+import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.map.MapViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MapsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class MapsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private var _binding: FragmentMapsBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel by lazy {
+        ViewModelProvider(this, factory).get(MapViewModel::class.java)
     }
+
+    @Inject
+    lateinit var factory: MapViewModelFactory
+    @Inject
+    lateinit var mapAdapter: MapAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+    ): View {
+        _binding = FragmentMapsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MapsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MapsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.recyclerViewMap.apply {
+            layoutManager = LinearLayoutManager(this.context)
+            adapter = mapAdapter
+        }
+
+        setMapData()
+    }
+
+    private fun setMapData() {
+        viewModel.getAllMapData()
+        viewModel.mapData.observe(viewLifecycleOwner) { response ->
+            when(response) {
+                is Resource.Success -> {
+                    setProgressBar(false)
+                    response.data.let { listMapData ->
+                        mapAdapter.setData(listMapData!!)
+                    }
+                }
+                is Resource.Error -> {
+                    setProgressBar(false)
+                    response.message?.let { errorMessage ->
+                        Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
+                        println("An error occurred : $errorMessage")
+                    }
+                }
+                is Resource.Loading -> {
+                    setProgressBar(true)
                 }
             }
+        }
     }
+
+    private fun setProgressBar(isShown : Boolean) {
+        binding.progressIndicator.visibility = if (isShown) View.VISIBLE else View.GONE
+    }
+
 }
