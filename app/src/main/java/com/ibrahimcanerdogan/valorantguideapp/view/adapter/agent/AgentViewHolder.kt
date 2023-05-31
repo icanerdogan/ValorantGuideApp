@@ -56,25 +56,25 @@ class AgentViewHolder(
 
     private fun setAgentAbilityData(agentData: AgentData) {
         binding.agentItemAbility.textViewAgentAbilityName1.text = agentData.agentAbilities[0].abilityDisplayName
-        binding.agentItemAbility.textViewAgentAbilityDescription1.text = agentData.agentAbilities[0].abilityDescription
+        binding.agentItemAbility.textViewAgentAbilityDescription1.text =  agentData.agentAbilities[0].abilityDescription.replace("\n", "")
         Glide.with(binding.agentItemAbility.imageViewAgentAbility1.context)
             .load(agentData.agentAbilities[0].abilityDisplayIcon)
             .into(binding.agentItemAbility.imageViewAgentAbility1)
 
         binding.agentItemAbility.textViewAgentAbilityName2.text = agentData.agentAbilities[1].abilityDisplayName
-        binding.agentItemAbility.textViewAgentAbilityDescription2.text = agentData.agentAbilities[1].abilityDescription
+        binding.agentItemAbility.textViewAgentAbilityDescription2.text = agentData.agentAbilities[1].abilityDescription.replace("\n", "")
         Glide.with(binding.agentItemAbility.imageViewAgentAbility2.context)
             .load(agentData.agentAbilities[1].abilityDisplayIcon)
             .into(binding.agentItemAbility.imageViewAgentAbility2)
 
         binding.agentItemAbility.textViewAgentAbilityName3.text = agentData.agentAbilities[2].abilityDisplayName
-        binding.agentItemAbility.textViewAgentAbilityDescription3.text = agentData.agentAbilities[2].abilityDescription
+        binding.agentItemAbility.textViewAgentAbilityDescription3.text = agentData.agentAbilities[2].abilityDescription.replace("\n", "")
         Glide.with(binding.agentItemAbility.imageViewAgentAbility3.context)
             .load(agentData.agentAbilities[2].abilityDisplayIcon)
             .into(binding.agentItemAbility.imageViewAgentAbility3)
 
         binding.agentItemAbility.textViewAgentAbilityName4.text = agentData.agentAbilities[3].abilityDisplayName
-        binding.agentItemAbility.textViewAgentAbilityDescription4.text = agentData.agentAbilities[3].abilityDescription
+        binding.agentItemAbility.textViewAgentAbilityDescription4.text = agentData.agentAbilities[3].abilityDescription.replace("\n", "")
         Glide.with(binding.agentItemAbility.imageViewAgentAbility4.context)
             .load(agentData.agentAbilities[3].abilityDisplayIcon)
             .into(binding.agentItemAbility.imageViewAgentAbility4)

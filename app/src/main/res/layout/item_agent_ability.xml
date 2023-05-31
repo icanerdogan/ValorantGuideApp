@@ -12,7 +12,8 @@
         android:layout_gravity="center"
         app:strokeColor="@color/ValorantWhite"
         app:strokeWidth="1dp"
-        android:layout_margin="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         app:cardCornerRadius="20dp">
 
         <LinearLayout
