@@ -7,6 +7,11 @@
     <color name="ValorantWhite">#FFFBF5</color>
     <color name="ValorantBlack">#000000</color>
     <color name="ValorantTransparent">#00FFFFFF</color>
+    <!--Color Palette 1 -->
+    <color name="ColorPalette1Dark">#311D3F</color>
+    <color name="ColorPalette1Middle">#522546</color>
+    <color name="ColorPalette1Mat">#88304E</color>
+    <color name="ColorPalette1Light">#E23E57</color>
     <!---->
     <color name="BlackTransparent10">#1A000000</color>
     <color name="BlackTransparent20">#33000000</color>

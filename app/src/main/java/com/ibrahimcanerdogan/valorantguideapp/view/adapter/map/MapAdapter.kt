@@ -10,6 +10,8 @@ import com.ibrahimcanerdogan.valorantguideapp.databinding.ItemMapBinding
 
 class MapAdapter : RecyclerView.Adapter<MapViewHolder>(){
 
+    var onMapItemClick: ((MapData) -> Unit)? = null
+
     private val diffUtil = object : DiffUtil.ItemCallback<MapData>() {
         override fun areItemsTheSame(oldItem: MapData, newItem: MapData): Boolean {
             return oldItem.uuid == newItem.uuid
@@ -28,7 +30,7 @@ class MapAdapter : RecyclerView.Adapter<MapViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MapViewHolder {
         val binding = ItemMapBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MapViewHolder(binding)
+        return MapViewHolder(binding, onMapItemClick)
     }
 
     override fun getItemCount(): Int {

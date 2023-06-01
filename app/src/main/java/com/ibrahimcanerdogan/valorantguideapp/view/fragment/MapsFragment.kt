@@ -1,13 +1,16 @@
 package com.ibrahimcanerdogan.valorantguideapp.view.fragment
 
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ibrahimcanerdogan.valorantguideapp.R
 import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentMapsBinding
 import com.ibrahimcanerdogan.valorantguideapp.util.Resource
 import com.ibrahimcanerdogan.valorantguideapp.view.adapter.map.MapAdapter
@@ -36,6 +39,17 @@ class MapsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMapsBinding.inflate(inflater, container, false)
+        val mapFragmentGradientDrawable = GradientDrawable(
+            GradientDrawable.Orientation.TOP_BOTTOM,
+            intArrayOf(
+                ContextCompat.getColor(requireContext(), R.color.ValorantBlack),
+                ContextCompat.getColor(requireContext(), R.color.ValorantPinkRed),
+                ContextCompat.getColor(requireContext(), R.color.ValorantPinkRed),
+                ContextCompat.getColor(requireContext(), R.color.ValorantPinkRed),
+                ContextCompat.getColor(requireContext(), R.color.ValorantBlack)
+            )
+        )
+        binding.frameLayoutMaps.background = mapFragmentGradientDrawable
         return binding.root
     }
 
@@ -44,6 +58,21 @@ class MapsFragment : Fragment() {
         binding.recyclerViewMap.apply {
             layoutManager = LinearLayoutManager(this.context)
             adapter = mapAdapter
+        }
+
+        mapAdapter.onMapItemClick = { mapData ->
+            val fragment = MapDetailFragment.newInstance(
+                mapName = mapData.mapDisplayName,
+                mapCoordinate = mapData.mapCoordinates,
+                mapSplashIcon = mapData.mapSplashIcon,
+                mapDisplayIcon = mapData.mapDisplayIcon
+            )
+            val fragmentManager = childFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+
+            fragmentTransaction.replace(R.id.frameLayoutMaps, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
 
         setMapData()

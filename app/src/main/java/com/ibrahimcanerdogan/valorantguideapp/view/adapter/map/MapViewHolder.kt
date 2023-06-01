@@ -6,15 +6,19 @@ import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapData
 import com.ibrahimcanerdogan.valorantguideapp.databinding.ItemMapBinding
 
 class MapViewHolder(
-    private val binding: ItemMapBinding
+    private val binding: ItemMapBinding,
+    private val onMapItemClick : ((MapData) -> Unit)?
 ) : RecyclerView.ViewHolder(binding.root){
 
     fun bind(mapData: MapData){
         Glide.with(binding.root.context)
-            .load(mapData.mapListViewIcon)
+            .load(mapData.mapSplashIcon)
             .into(binding.imageViewListMapIcon)
 
         binding.textViewListMapName.text = mapData.mapDisplayName
 
+        binding.llListMapItem.setOnClickListener {
+            onMapItemClick?.invoke(mapData)
+        }
     }
 }
