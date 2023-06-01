@@ -9,6 +9,9 @@ import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentData
 import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentMedia
 import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentRole
 import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentVoiceLine
+import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapCallout
+import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapData
+import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapLocation
 
 class Converters {
     private val gson = Gson()
@@ -97,5 +100,41 @@ class Converters {
     fun toStringList(stringListString: String): List<String>? {
         val listType = object : TypeToken<List<String>?>() {}.type
         return gson.fromJson(stringListString, listType)
+    }
+
+
+    // MAP
+
+    @TypeConverter
+    fun fromMapData(mapData: MapData): String {
+        return gson.toJson(mapData)
+    }
+
+    @TypeConverter
+    fun toMapData(json: String): MapData {
+        val type = object : TypeToken<MapData>() {}.type
+        return gson.fromJson(json, type)
+    }
+
+    @TypeConverter
+    fun fromMapCalloutList(mapCallouts: List<MapCallout>?): String? {
+        return gson.toJson(mapCallouts)
+    }
+
+    @TypeConverter
+    fun toMapCalloutList(json: String?): List<MapCallout>? {
+        val type = object : TypeToken<List<MapCallout>>() {}.type
+        return gson.fromJson(json, type)
+    }
+
+    @TypeConverter
+    fun fromMapLocation(mapLocation: MapLocation): String {
+        return gson.toJson(mapLocation)
+    }
+
+    @TypeConverter
+    fun toMapLocation(json: String): MapLocation {
+        val type = object : TypeToken<MapLocation>() {}.type
+        return gson.fromJson(json, type)
     }
 }
