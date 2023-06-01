@@ -10,5 +10,6 @@
 
     <!-- MAP -->
     <string name="turn_off_map_detail">Tap anywhere to turn off the screen!</string>
+    <string name="ascent">ASCENT</string>
 
 </resources>

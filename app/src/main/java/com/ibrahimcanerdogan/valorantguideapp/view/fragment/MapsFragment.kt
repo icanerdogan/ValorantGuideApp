@@ -1,13 +1,11 @@
 package com.ibrahimcanerdogan.valorantguideapp.view.fragment
 
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ibrahimcanerdogan.valorantguideapp.R
@@ -39,17 +37,6 @@ class MapsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMapsBinding.inflate(inflater, container, false)
-        val mapFragmentGradientDrawable = GradientDrawable(
-            GradientDrawable.Orientation.TOP_BOTTOM,
-            intArrayOf(
-                ContextCompat.getColor(requireContext(), R.color.ValorantBlack),
-                ContextCompat.getColor(requireContext(), R.color.ValorantPinkRed),
-                ContextCompat.getColor(requireContext(), R.color.ValorantPinkRed),
-                ContextCompat.getColor(requireContext(), R.color.ValorantPinkRed),
-                ContextCompat.getColor(requireContext(), R.color.ValorantBlack)
-            )
-        )
-        binding.frameLayoutMaps.background = mapFragmentGradientDrawable
         return binding.root
     }
 
