@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ibrahimcanerdogan.valorantguideapp.R
 import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentMapsBinding
 import com.ibrahimcanerdogan.valorantguideapp.util.Resource
@@ -91,6 +92,11 @@ class MapsFragment : Fragment() {
 
     private fun setProgressBar(isShown : Boolean) {
         binding.progressIndicator.visibility = if (isShown) View.VISIBLE else View.GONE
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
     }
 
 }

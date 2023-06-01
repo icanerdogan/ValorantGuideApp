@@ -54,20 +54,15 @@ class MapDetailFragment : Fragment() {
     }
 
     private fun closeFragment() {
-        binding.frameLayoutMapDetail.visibility = View.GONE
-        onPause()
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frameLayoutMaps, MapsFragment()).commit()
     }
 
     override fun onResume() {
         super.onResume()
         // Hide the bottom navigation bar
         requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.GONE
-    }
-
-    override fun onPause() {
-        super.onPause()
-        // Show the bottom navigation bar
-        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
     }
 
     companion object {
