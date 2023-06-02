@@ -1,4 +1,4 @@
-package com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.agent
+package com.ibrahimcanerdogan.valorantguideapp.view.viewmodel
 
 import android.app.Application
 import android.content.Context

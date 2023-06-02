@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.ibrahimcanerdogan.valorantguideapp.data.database.ValorantDatabase
 import com.ibrahimcanerdogan.valorantguideapp.data.database.agent.AgentDao
+import com.ibrahimcanerdogan.valorantguideapp.data.database.map.MapDao
 import com.ibrahimcanerdogan.valorantguideapp.util.AppConstant
 import dagger.Module
 import dagger.Provides
@@ -27,5 +28,11 @@ class DatabaseModule {
     @Provides
     fun provideAgentDao(valorantDatabase: ValorantDatabase) : AgentDao {
         return valorantDatabase.agentDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideMapDao(valorantDatabase: ValorantDatabase) : MapDao {
+        return valorantDatabase.mapDao()
     }
 }

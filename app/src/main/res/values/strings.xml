@@ -7,4 +7,9 @@
     <string name="other">Other</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- MAP -->
+    <string name="turn_off_map_detail">Tap anywhere to turn off the screen!</string>
+    <string name="ascent">ASCENT</string>
+
 </resources>

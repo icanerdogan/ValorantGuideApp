@@ -2,7 +2,9 @@ package com.ibrahimcanerdogan.valorantguideapp.view.dependencyinjection
 
 import android.app.Application
 import com.ibrahimcanerdogan.valorantguideapp.domain.usecase.agent.GetAgentUseCase
+import com.ibrahimcanerdogan.valorantguideapp.domain.usecase.map.GetMapUseCase
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.agent.AgentViewModelFactory
+import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.map.MapViewModelFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +24,18 @@ class FactoryModule {
         return AgentViewModelFactory(
             application,
             getAgentUseCase
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideMapViewModelFactory(
+        application: Application,
+        getMapUseCase: GetMapUseCase
+    ) : MapViewModelFactory {
+        return MapViewModelFactory(
+            application,
+            getMapUseCase
         )
     }
 }

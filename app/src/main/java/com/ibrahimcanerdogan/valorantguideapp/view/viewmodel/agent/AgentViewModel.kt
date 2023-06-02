@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentData
 import com.ibrahimcanerdogan.valorantguideapp.domain.usecase.agent.GetAgentUseCase
 import com.ibrahimcanerdogan.valorantguideapp.util.Resource
+import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
