@@ -10,4 +10,4 @@ Agent             |  Info  | Role             |  Skills
 
 Map List             |  Map Detail
 :-------------------------:|:-------------------------:
- ![map_list](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/32d6c13c-f789-410e-8e4f-d96bc96a7084) | ![map_detail](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/7a47c7ee-669a-4f9a-94cd-97ce3e7de04b)
+![map_list](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/d767dc25-deb2-4d45-9986-d47b1fbb068b)|![map_detail](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/d2cb3ff2-dd72-43db-84a6-37b62deb0caa)
