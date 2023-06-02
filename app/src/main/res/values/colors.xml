@@ -6,6 +6,22 @@
     <color name="ValorantDarkRed">#53212B</color>
     <color name="ValorantWhite">#FFFBF5</color>
     <color name="ValorantBlack">#000000</color>
+    <color name="ValorantTransparent">#00FFFFFF</color>
+    <!--Color Palette 1 -->
+    <color name="ColorPalette1Dark">#311D3F</color>
+    <color name="ColorPalette1Middle">#522546</color>
+    <color name="ColorPalette1Mat">#88304E</color>
+    <color name="ColorPalette1Light">#E23E57</color>
+    <!---->
+    <color name="BlackTransparent10">#1A000000</color>
+    <color name="BlackTransparent20">#33000000</color>
+    <color name="BlackTransparent30">#4D000000</color>
+    <color name="BlackTransparent40">#66000000</color>
+    <color name="BlackTransparent50">#80000000</color>
+    <color name="BlackTransparent60">#99000000</color>
+    <color name="BlackTransparent70">#B3000000</color>
+    <color name="BlackTransparent80">#CC000000</color>
+    <color name="BlackTransparent90">#E6000000</color>
     <!--All Color Codes-->
     <color name="Black">#000000</color>
     <color name="Gunmetal">#2C3539</color>
