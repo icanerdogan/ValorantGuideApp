@@ -1,60 +1,83 @@
 package com.ibrahimcanerdogan.valorantguideapp.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ibrahimcanerdogan.valorantguideapp.R
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentWeaponBinding
+import com.ibrahimcanerdogan.valorantguideapp.util.Resource
+import com.ibrahimcanerdogan.valorantguideapp.view.adapter.weapon.WeaponAdapter
+import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.weapon.WeaponViewModel
+import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.weapon.WeaponViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [WeaponFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class WeaponFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private var _binding: FragmentWeaponBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel by lazy {
+        ViewModelProvider(this, factory).get(WeaponViewModel::class.java)
     }
+
+    @Inject
+    lateinit var factory: WeaponViewModelFactory
+    @Inject
+    lateinit var weaponAdapter: WeaponAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weapon, container, false)
+    ): View {
+        _binding = FragmentWeaponBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment WeaponFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            WeaponFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.recyclerViewWeapon.apply {
+            layoutManager = LinearLayoutManager(this.context)
+            adapter = weaponAdapter
+        }
+        setWeaponData()
+    }
+
+    private fun setWeaponData() {
+        viewModel.getAllWeaponData()
+        viewModel.weaponData.observe(viewLifecycleOwner) { response ->
+            when(response) {
+                is Resource.Success -> {
+                    setProgressBar(false)
+                    response.data.let { listWeaponData ->
+                        listWeaponData?.let {
+                            weaponAdapter.setData(it)
+                            Log.i("Weapon Success Data", it.toString())
+                        }
+
+                    }
+                }
+                is Resource.Error -> {
+                    setProgressBar(false)
+                    response.message?.let { errorMessage ->
+                        Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
+                        Log.e("Weapon Error Data", errorMessage)
+                    }
+                }
+                is Resource.Loading -> {
+                    setProgressBar(true)
                 }
             }
+        }
+    }
+
+    private fun setProgressBar(isShown : Boolean) {
+        binding.progressIndicator.visibility = if (isShown) View.VISIBLE else View.GONE
     }
 }
