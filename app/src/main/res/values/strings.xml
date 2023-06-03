@@ -12,4 +12,8 @@
     <string name="turn_off_map_detail">Tap anywhere to turn off the screen!</string>
     <string name="ascent">ASCENT</string>
 
+    <!-- MAP -->
+    <string name="odin">ODIN</string>
+    <string name="heavy">Heavy</string>
+
 </resources>

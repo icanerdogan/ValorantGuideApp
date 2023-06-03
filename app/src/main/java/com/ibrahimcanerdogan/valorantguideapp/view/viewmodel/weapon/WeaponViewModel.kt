@@ -24,12 +24,18 @@ class WeaponViewModel @Inject constructor(
     val weaponData : LiveData<Resource<List<WeaponData>>>
         get() = weapon
 
-    fun getAllWeaponData() = viewModelScope.launch(Dispatchers.IO) {
+    fun getAllWeaponData(weaponCategory: String) = viewModelScope.launch(Dispatchers.IO) {
         weapon.postValue(Resource.Loading())
 
         try {
             val apiResult = getWeaponUseCase.execute()
-            weapon.postValue(apiResult)
+            val newList: ArrayList<WeaponData> = arrayListOf()
+            for (i in apiResult.data!!.indices) {
+                if (apiResult.data[i].weaponCategory.split("::")[1] == weaponCategory) {
+                    newList.add(apiResult.data[i])
+                }
+            }
+            weapon.postValue(Resource.Success(newList))
         } catch (e : Exception) {
             weapon.postValue(Resource.Error(e.message.toString()))
         }

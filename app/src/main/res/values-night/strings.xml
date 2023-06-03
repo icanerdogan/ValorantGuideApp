@@ -5,4 +5,5 @@
     <string name="agents">Agents</string>
     <string name="weapons">Weapons</string>
     <string name="other">Other</string>
+    <string name="heavy">Heavy</string>
 </resources>
