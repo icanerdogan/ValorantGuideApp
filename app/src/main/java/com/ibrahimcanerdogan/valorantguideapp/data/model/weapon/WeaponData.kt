@@ -1,11 +1,15 @@
 package com.ibrahimcanerdogan.valorantguideapp.data.model.weapon
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.shop.WeaponShop
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.skin.WeaponSkin
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.stats.WeaponStat
 
+@Entity(
+    tableName = "weapon_data"
+)
 data class WeaponData(
     @PrimaryKey
     @SerializedName("uuid")

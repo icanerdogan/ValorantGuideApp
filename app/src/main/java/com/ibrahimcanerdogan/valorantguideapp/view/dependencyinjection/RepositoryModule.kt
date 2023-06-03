@@ -7,6 +7,7 @@ import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.MapRepositoryI
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.WeaponRepositoryImpl
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.agent.AgentRepository
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.map.MapRepository
@@ -42,8 +43,9 @@ class RepositoryModule {
     @Singleton
     @Provides
     fun provideWeaponRepository(
-        weaponRemoteDataSource: WeaponRemoteDataSource
+        weaponRemoteDataSource: WeaponRemoteDataSource,
+        weaponLocalDataSource: WeaponLocalDataSource
     ) : WeaponRepository {
-        return WeaponRepositoryImpl(weaponRemoteDataSource)
+        return WeaponRepositoryImpl(weaponRemoteDataSource, weaponLocalDataSource)
     }
 }
