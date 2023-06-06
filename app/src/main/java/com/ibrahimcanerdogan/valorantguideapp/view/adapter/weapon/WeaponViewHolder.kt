@@ -7,7 +7,8 @@ import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.WeaponData
 import com.ibrahimcanerdogan.valorantguideapp.databinding.ItemWeaponBinding
 
 class WeaponViewHolder(
-    private val binding: ItemWeaponBinding
+    private val binding: ItemWeaponBinding,
+    private var onWeaponItemClick: ((String) -> Unit)? = null
 ) : RecyclerView.ViewHolder(binding.root){
 
     fun bind(weaponData: WeaponData){
@@ -23,5 +24,9 @@ class WeaponViewHolder(
             .into(binding.imageViewListWeaponIcon)
 
         binding.textViewWeaponName.text = weaponData.weaponDisplayName
+
+        binding.llListWeaponItem.setOnClickListener {
+            onWeaponItemClick?.invoke(weaponData.uuid)
+        }
     }
 }

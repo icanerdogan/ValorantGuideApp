@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.ibrahimcanerdogan.valorantguideapp.R
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.WeaponData
 import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentWeaponBinding
 import com.ibrahimcanerdogan.valorantguideapp.util.Resource
@@ -44,6 +46,10 @@ class WeaponFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentWeaponBinding.inflate(inflater, container, false)
+        // java.lang.IllegalStateException: Cannot change whether this adapter has stable IDs while the adapter has registered observers.
+        if (!weaponAdapter.hasObservers()) {
+            weaponAdapter.setHasStableIds(true)
+        }
         return binding.root
     }
 
@@ -65,6 +71,17 @@ class WeaponFragment : Fragment() {
             // Melee Weapon
             setWeaponDataUI("Melee", linearLayoutMeleeTitle, recyclerViewMelee, expandableLayoutMelee)
         }
+        weaponAdapter.onWeaponItemClick = {
+            val fragment = WeaponDetailFragment.newInstance(
+                weaponUUID = it
+            )
+            val fragmentManager = childFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+
+            fragmentTransaction.replace(R.id.frameLayoutWeapon, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
     }
 
     private fun setWeaponDataUI(
@@ -77,7 +94,7 @@ class WeaponFragment : Fragment() {
 
         linearLayoutTitle.setOnClickListener {
             viewModel.getAllWeaponData(weaponCategory)
-            viewModel.weaponData.observe(viewLifecycleOwner, ::setLiveData)
+            viewModel.weaponListData.observe(viewLifecycleOwner, ::setLiveData)
             Handler(Looper.getMainLooper()).postDelayed({
                 if (!expandableLayout.isExpanded) {
                     closeAllExpandableLayout()
@@ -131,5 +148,10 @@ class WeaponFragment : Fragment() {
     }
     private fun setProgressBar(isShown : Boolean) {
         binding.progressIndicator.visibility = if (isShown) View.VISIBLE else View.GONE
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
     }
 }

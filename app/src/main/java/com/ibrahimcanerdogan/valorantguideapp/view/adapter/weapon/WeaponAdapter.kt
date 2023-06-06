@@ -5,10 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapData
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.WeaponData
 import com.ibrahimcanerdogan.valorantguideapp.databinding.ItemWeaponBinding
 
 class WeaponAdapter : RecyclerView.Adapter<WeaponViewHolder>(){
+
+    var onWeaponItemClick: ((String) -> Unit)? = null
 
     private val diffUtil = object : DiffUtil.ItemCallback<WeaponData>() {
         override fun areItemsTheSame(oldItem: WeaponData, newItem: WeaponData): Boolean {
@@ -28,7 +31,7 @@ class WeaponAdapter : RecyclerView.Adapter<WeaponViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeaponViewHolder {
         val binding = ItemWeaponBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return WeaponViewHolder(binding)
+        return WeaponViewHolder(binding, onWeaponItemClick)
     }
 
     override fun getItemCount(): Int {

@@ -20,12 +20,16 @@ class WeaponViewModel @Inject constructor(
     private val getWeaponUseCase: GetWeaponUseCase
 ) : BaseViewModel(app) {
 
-    private var weapon = MutableLiveData<Resource<List<WeaponData>>>()
-    val weaponData : LiveData<Resource<List<WeaponData>>>
+    private var weaponList = MutableLiveData<Resource<List<WeaponData>>>()
+    val weaponListData : LiveData<Resource<List<WeaponData>>>
+        get() = weaponList
+
+    private var weapon = MutableLiveData<Resource<WeaponData>>()
+    val weaponData : LiveData<Resource<WeaponData>>
         get() = weapon
 
     fun getAllWeaponData(weaponCategory: String) = viewModelScope.launch(Dispatchers.IO) {
-        weapon.postValue(Resource.Loading())
+        weaponList.postValue(Resource.Loading())
 
         try {
             val apiResult = getWeaponUseCase.execute()
@@ -35,7 +39,22 @@ class WeaponViewModel @Inject constructor(
                     newList.add(apiResult.data[i])
                 }
             }
-            weapon.postValue(Resource.Success(newList))
+            weaponList.postValue(Resource.Success(newList))
+        } catch (e : Exception) {
+            weaponList.postValue(Resource.Error(e.message.toString()))
+        }
+    }
+
+    fun getDetailWeaponData(uuid: String) = viewModelScope.launch(Dispatchers.IO) {
+        weapon.postValue(Resource.Loading())
+
+        try {
+            val managerResult = getWeaponUseCase.execute()
+            managerResult.data?.forEach { weaponData ->
+                if (weaponData.uuid == uuid) {
+                    weapon.postValue(Resource.Success(weaponData))
+                }
+            }
         } catch (e : Exception) {
             weapon.postValue(Resource.Error(e.message.toString()))
         }
