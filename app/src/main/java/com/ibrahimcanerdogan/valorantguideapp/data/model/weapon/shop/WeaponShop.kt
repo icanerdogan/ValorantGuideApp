@@ -11,5 +11,11 @@ data class WeaponShop(
     @SerializedName("category")
     val shopCategory: String, // Rifles
     @SerializedName("categoryText")
-    val shopCategoryText: String // Assault Rifles
+    val shopCategoryText: String, // Assault Rifles
+    @SerializedName("image")
+    val shopImage: String?,
+    @SerializedName("newImage")
+    val shopNewImage: String?,
+    @SerializedName("newImage2")
+    val shopNewImage2: String?
 )

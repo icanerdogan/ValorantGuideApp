@@ -15,24 +15,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/ValorantPinkRed"
+            android:background="@drawable/background_bottom_radius"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/textViewWeaponDetailName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|top"
+                android:layout_marginTop="10dp"
                 android:textSize="30sp"
                 android:textColor="@color/ValorantWhite"
                 android:text="@string/odin"
-                android:fontFamily="@font/chakrapetch_medium"/>
+                android:fontFamily="@font/valorant_font"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageViewWeaponDetailIcon"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="center"
-                android:background="@drawable/example_odin"/>
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scaleType="fitCenter"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,9 +42,9 @@
             android:layout_marginTop="20dp"
             android:orientation="vertical">
 
-            <include layout="@layout/weapon_detail_stats"/>
-            <include layout="@layout/weapon_detail_damage_range"/>
-            <include layout="@layout/weapon_detail_shop_data"/>
+            <include android:id="@+id/includeWeaponDetailStat" layout="@layout/weapon_detail_stats"/>
+            <include android:id="@+id/includeWeaponDetailDamage" layout="@layout/weapon_detail_damage_range"/>
+            <include android:id="@+id/includeWeaponDetailShop" layout="@layout/weapon_detail_shop_data"/>
 
         </LinearLayout>
 
@@ -51,9 +52,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/ValorantBlack"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
+            <include layout="@layout/weapon_detail_skin"/>
         </LinearLayout>
     </LinearLayout>
 

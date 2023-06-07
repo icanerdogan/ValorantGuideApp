@@ -12,7 +12,7 @@ import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.WeaponData
 
 @Database(
     entities = [AgentData::class, MapData::class, WeaponData::class],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

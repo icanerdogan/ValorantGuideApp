@@ -15,35 +15,163 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewArrowWeaponDetailStat"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="center"
+                android:background="@drawable/icon_arrow_right"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:fontFamily="@font/chakrapetch_regular"
+                android:fontFamily="@font/chakrapetch_bold"
                 android:textColor="@color/ValorantWhite"
                 android:text="Weapon Stats"/>
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
+                android:layout_height="2dp"
                 android:background="@color/Gray"
-                android:layout_marginTop="2dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="3dp"/>
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
         </LinearLayout>
         <!--Weapon Stats Expandable Layout-->
         <net.cachapa.expandablelayout.ExpandableLayout
             android:id="@+id/expandableLayoutWeaponStats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             app:el_expanded="false">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatFireRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Fire Rate: 12"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatMagazineSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Magazine Size: 100"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:background="@color/Gray"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatRunSpeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Run Speed: 0.76x"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatReloadSecond"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Reload Seconds: 5 sec"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:background="@color/Gray"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatFirstBulletAcc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="First Bullet Acc: 0.8"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatEquipTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Equip Time: 1.12"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:background="@color/Gray"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatShotgunPelletCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Shotgun Pellet Count: 1"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewWeaponDetailStatWallPenetration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Wall Penetration: High"
+                        android:textSize="14sp"
+                        android:textColor="@color/White"
+                        android:fontFamily="@font/chakrapetch_regular"/>
+                </LinearLayout>
             </LinearLayout>
         </net.cachapa.expandablelayout.ExpandableLayout>
     </LinearLayout>

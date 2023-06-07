@@ -35,5 +35,5 @@ data class WeaponStat(
     @SerializedName("airBurstStats")
     val statAirBurst: StatAirBurst?,
     @SerializedName("damageRanges")
-    val statDamageRanges: List<StatDamageRange>
+    val statDamageRanges: List<StatDamageRange?>
 )
