@@ -51,98 +51,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="30dp"
                 android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/linearLayoutWeaponDamageFirst"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="100dp"
-                        android:layout_height="200dp"
-                        android:layout_marginStart="40dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/damage_manikin"/>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/textViewWeaponDetailDamageFirstHead"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="20dp"
-                            android:text="Head"
-                            android:textSize="20sp"
-                            android:textColor="@color/ValorantPinkRed"
-                            android:fontFamily="@font/chakrapetch_bold"/>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/textViewWeaponDetailDamageFirstBody"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="20dp"
-                            android:text="Body"
-                            android:textSize="20sp"
-                            android:textColor="@color/ValorantPinkRed"
-                            android:fontFamily="@font/chakrapetch_bold"/>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/textViewWeaponDetailDamageFirstLeg"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="20dp"
-                            android:text="Leg"
-                            android:textSize="20sp"
-                            android:textColor="@color/ValorantPinkRed"
-                            android:fontFamily="@font/chakrapetch_bold"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayoutWeaponDamageSecond"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="100dp"
-                        android:layout_height="200dp"
-                        android:layout_marginStart="40dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/damage_manikin"/>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/textViewWeaponDetailDamageSecondHead"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="20dp"
-                            android:text="Head"
-                            android:textSize="20sp"
-                            android:textColor="@color/ValorantPinkRed"
-                            android:fontFamily="@font/chakrapetch_bold"/>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/textViewWeaponDetailDamageSecondBody"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="20dp"
-                            android:text="Body"
-                            android:textSize="20sp"
-                            android:textColor="@color/ValorantPinkRed"
-                            android:fontFamily="@font/chakrapetch_bold"/>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/textViewWeaponDetailDamageSecondLeg"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="20dp"
-                            android:text="Leg"
-                            android:textSize="20sp"
-                            android:textColor="@color/ValorantPinkRed"
-                            android:fontFamily="@font/chakrapetch_bold"/>
-                    </LinearLayout>
-                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewWeaponDamageRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
         </net.cachapa.expandablelayout.ExpandableLayout>
     </LinearLayout>

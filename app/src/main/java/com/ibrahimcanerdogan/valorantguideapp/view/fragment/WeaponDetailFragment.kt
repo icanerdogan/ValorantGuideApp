@@ -1,13 +1,15 @@
 package com.ibrahimcanerdogan.valorantguideapp.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ibrahimcanerdogan.valorantguideapp.R
@@ -15,6 +17,7 @@ import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.WeaponData
 import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentWeaponDetailBinding
 import com.ibrahimcanerdogan.valorantguideapp.util.AnimationUtil
 import com.ibrahimcanerdogan.valorantguideapp.util.Resource
+import com.ibrahimcanerdogan.valorantguideapp.view.adapter.weapon.WeaponDamageRangeAdapter
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.weapon.WeaponViewModel
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.weapon.WeaponViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,6 +37,8 @@ class WeaponDetailFragment : Fragment() {
 
     @Inject
     lateinit var factory: WeaponViewModelFactory
+    @Inject
+    lateinit var weaponDamageRangeAdapter: WeaponDamageRangeAdapter
 
     private var weaponUUID: String? = null
 
@@ -115,18 +120,14 @@ class WeaponDetailFragment : Fragment() {
                         AnimationUtil.animateArrow(imageViewArrowWeaponDamage)
                         expandableLayoutWeaponDamage.isExpanded = !expandableLayoutWeaponDamage.isExpanded
                     }
-                    weaponData?.weaponStats?.let {
-                        if (it.statDamageRanges[0] != null) {
-                            textViewWeaponDetailDamageFirstHead.text = it.statDamageRanges[0]!!.damageHead.toInt().toString()
-                            textViewWeaponDetailDamageFirstBody.text = it.statDamageRanges[0]!!.damageBody.toString()
-                            textViewWeaponDetailDamageFirstLeg.text = it.statDamageRanges[0]!!.damageLeg.toInt().toString()
-                        }
-                        if (it.statDamageRanges.size > 1) {
-                            linearLayoutWeaponDamageSecond.visibility = View.VISIBLE
-                            textViewWeaponDetailDamageSecondHead.text = it.statDamageRanges[1]!!.damageHead.toInt().toString()
-                            textViewWeaponDetailDamageSecondBody.text = it.statDamageRanges[1]!!.damageBody.toString()
-                            textViewWeaponDetailDamageSecondLeg.text = it.statDamageRanges[1]!!.damageLeg.toInt().toString()
-                        }
+
+                    recyclerViewWeaponDamageRange.apply {
+                        layoutManager = LinearLayoutManager(this.context, HORIZONTAL, false)
+                        adapter = weaponDamageRangeAdapter
+                        addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.HORIZONTAL))
+                    }
+                    weaponData?.weaponStats?.statDamageRanges.let {
+                        weaponDamageRangeAdapter.setData(it)
                     }
                 }
                 // SHOP
