@@ -158,19 +158,20 @@ class WeaponDetailFragment : Fragment() {
                         }
                     }
                 }
-                // SKINS
-                includeWeaponDetailSkin.apply {
-                    val adapter1 = WeaponSkinPagerAdapter(requireContext(), weaponData!!.weaponSkins)
-                    viewPagerWeaponDetailSkin.adapter = adapter1
-                    tabLayoutWeaponDetailSkin.setupWithViewPager(viewPagerWeaponDetailSkin)
-                    for (i in 0 until tabLayoutWeaponDetailSkin.tabCount) {
-                        tabLayoutWeaponDetailSkin.getTabAt(i)!!.text = weaponData.weaponSkins[i].skinDisplayName
-                    }
-                }
             } else {
                 includeWeaponDetailStat.root.visibility = View.GONE
                 includeWeaponDetailDamage.root.visibility = View.GONE
                 includeWeaponDetailShop.root.visibility = View.GONE
+            }
+
+            // SKINS
+            includeWeaponDetailSkin.apply {
+                val adapter1 = WeaponSkinPagerAdapter(requireContext(), weaponData!!.weaponSkins)
+                viewPagerWeaponDetailSkin.adapter = adapter1
+                tabLayoutWeaponDetailSkin.setupWithViewPager(viewPagerWeaponDetailSkin)
+                for (i in 0 until tabLayoutWeaponDetailSkin.tabCount) {
+                    tabLayoutWeaponDetailSkin.getTabAt(i)!!.text = weaponData.weaponSkins[i].skinDisplayName
+                }
             }
         }
     }
