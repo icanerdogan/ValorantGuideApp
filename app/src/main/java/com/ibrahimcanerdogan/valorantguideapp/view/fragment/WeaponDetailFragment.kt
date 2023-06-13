@@ -18,6 +18,7 @@ import com.ibrahimcanerdogan.valorantguideapp.databinding.FragmentWeaponDetailBi
 import com.ibrahimcanerdogan.valorantguideapp.util.AnimationUtil
 import com.ibrahimcanerdogan.valorantguideapp.util.Resource
 import com.ibrahimcanerdogan.valorantguideapp.view.adapter.weapon.WeaponDamageRangeAdapter
+import com.ibrahimcanerdogan.valorantguideapp.view.adapter.weapon.WeaponSkinPagerAdapter
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.weapon.WeaponViewModel
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.weapon.WeaponViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
@@ -155,6 +156,15 @@ class WeaponDetailFragment : Fragment() {
                         } else {
                             imageViewWeaponDetailShopIcon.visibility = View.GONE
                         }
+                    }
+                }
+                // SKINS
+                includeWeaponDetailSkin.apply {
+                    val adapter1 = WeaponSkinPagerAdapter(requireContext(), weaponData!!.weaponSkins)
+                    viewPagerWeaponDetailSkin.adapter = adapter1
+                    tabLayoutWeaponDetailSkin.setupWithViewPager(viewPagerWeaponDetailSkin)
+                    for (i in 0 until tabLayoutWeaponDetailSkin.tabCount) {
+                        tabLayoutWeaponDetailSkin.getTabAt(i)!!.text = weaponData.weaponSkins[i].skinDisplayName
                     }
                 }
             } else {
