@@ -56,7 +56,7 @@ class WeaponDetailFragment : Fragment() {
     ): View {
         _binding = FragmentWeaponDetailBinding.inflate(inflater, container, false)
         setWeaponDetailData()
-        binding.frameLayoutWeaponDetail.setOnClickListener {
+        binding.buttonWeaponDetailClose.setOnClickListener {
             closeFragment()
         }
         return binding.root

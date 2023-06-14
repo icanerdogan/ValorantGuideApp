@@ -11,6 +11,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.ibrahimcanerdogan.valorantguideapp.R
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.skin.WeaponSkin
+import com.ibrahimcanerdogan.valorantguideapp.util.AppUtil
 
 class WeaponSkinPagerAdapter(
     private val context: Context,
@@ -34,20 +35,25 @@ class WeaponSkinPagerAdapter(
             .load(skinList[position].skinDisplayIcon)
             .into(imageView)
 
-        if (skinList[position].skinLevels[skinList[position].skinLevels.size - 1].levelStreamedVideo != null){
-            webView.visibility = View.VISIBLE
-            webView.settings.javaScriptEnabled = true
-            webView.webViewClient = WebViewClient()
-            webView.loadUrl(skinList[position].skinLevels[skinList[position].skinLevels.size - 1].levelStreamedVideo!!)
-        } else if (skinList[position].skinChromas[skinList[position].skinChromas.size - 1].chromaStreamedVideo != null) {
-            webView.visibility = View.VISIBLE
-            webView.settings.javaScriptEnabled = true
-            webView.webViewClient = WebViewClient()
-            webView.loadUrl(skinList[position].skinChromas[skinList[position].skinChromas.size - 1].chromaStreamedVideo!!)
+        val levelStreamedVideoUrl = skinList[position].skinLevels[skinList[position].skinLevels.size - 1].levelStreamedVideo
+        val chromaStreamedVideoUrl = skinList[position].skinChromas[skinList[position].skinChromas.size - 1].chromaStreamedVideo
+
+        if (AppUtil.isNetworkAvailable(context)) {
+            if (!levelStreamedVideoUrl.isNullOrEmpty()) startVideo(webView, levelStreamedVideoUrl)
+            else if (!chromaStreamedVideoUrl.isNullOrEmpty()) startVideo(webView, chromaStreamedVideoUrl)
         }
 
         container.addView(view)
         return view
+    }
+
+    private fun startVideo(webView: WebView, videoUrl: String) {
+        webView.apply {
+            visibility = View.VISIBLE
+            settings.javaScriptEnabled = true
+            webViewClient = WebViewClient()
+            loadUrl(videoUrl)
+        }
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
