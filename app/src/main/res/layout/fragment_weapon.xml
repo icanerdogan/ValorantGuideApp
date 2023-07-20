@@ -9,6 +9,17 @@
     android:layout_gravity="center"
     tools:context=".view.fragment.WeaponFragment">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fragment_weapon_background" />
+
+    <!-- Background Image Transparent -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/BlackTransparent30"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
