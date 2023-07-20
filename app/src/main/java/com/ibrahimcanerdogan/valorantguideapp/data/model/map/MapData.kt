@@ -14,7 +14,7 @@ data class MapData(
     @SerializedName("displayName")
     val mapDisplayName: String,
     @SerializedName("coordinates")
-    val mapCoordinates: String,
+    val mapCoordinates: String?,
     @SerializedName("displayIcon")
     val mapDisplayIcon: String?,
     @SerializedName("listViewIcon")

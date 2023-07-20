@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Valorant Guide App</string>
     <string name="menu">Menu</string>
     <string name="maps">Maps</string>
     <string name="agents">Agents</string>
     <string name="weapons">Weapons</string>
     <string name="other">Other</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- MAP -->
+    <string name="turn_off_map_detail">Tap anywhere to turn off the screen!</string>
+    <string name="ascent">ASCENT</string>
+
+    <!-- WEAPON -->
+    <string name="odin">ODIN</string>
+    <string name="heavy">Heavy</string>
+    <string name="fire_rate">Fire Rate: <b>%1$s</b></string>
+    <string name="magazine_size">Magazine Size: <b>%1$s</b></string>
+    <string name="run_speed">Run Speed: <b>%1$s</b></string>
+    <string name="reload_second">Reload Seconds: <b>%1$s</b></string>
+    <string name="first_bullet_accuracy">First Bullet Acc: <b>%1$s</b></string>
+    <string name="equip_time">Equip Time: <b>%1$s</b></string>
+    <string name="shotgun_pellet_count">Shotgun Pellet Count: <b>%1$s</b></string>
+    <string name="wall_penetration">Wall Penetration: <b>%1$s</b></string>
+    <string name="shop_cost">Cost: <b>%1$s</b></string>
+    <string name="shop_category">Category: <b>%1$s</b></string>
+
 </resources>
