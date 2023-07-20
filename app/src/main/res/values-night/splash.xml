@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ValorantGuideApp.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ValorantPinkRed</item>
+        <item name="windowSplashScreenAnimationDuration">2000</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/valorant_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.ValorantGuideApp</item>
+    </style>
+</resources>
