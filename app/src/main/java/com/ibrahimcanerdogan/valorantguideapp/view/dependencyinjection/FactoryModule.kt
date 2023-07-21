@@ -3,8 +3,10 @@ package com.ibrahimcanerdogan.valorantguideapp.view.dependencyinjection
 import android.app.Application
 import com.ibrahimcanerdogan.valorantguideapp.domain.usecase.agent.GetAgentUseCase
 import com.ibrahimcanerdogan.valorantguideapp.domain.usecase.map.GetMapUseCase
+import com.ibrahimcanerdogan.valorantguideapp.domain.usecase.weapon.GetWeaponUseCase
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.agent.AgentViewModelFactory
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.map.MapViewModelFactory
+import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.weapon.WeaponViewModelFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,6 +38,18 @@ class FactoryModule {
         return MapViewModelFactory(
             application,
             getMapUseCase
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideWeaponViewModelFactory(
+        application: Application,
+        getWeaponUseCase: GetWeaponUseCase
+    ) : WeaponViewModelFactory {
+        return WeaponViewModelFactory(
+            application,
+            getWeaponUseCase
         )
     }
 }

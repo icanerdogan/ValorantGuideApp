@@ -2,10 +2,13 @@ package com.ibrahimcanerdogan.valorantguideapp.view.dependencyinjection
 
 import com.ibrahimcanerdogan.valorantguideapp.data.database.agent.AgentDao
 import com.ibrahimcanerdogan.valorantguideapp.data.database.map.MapDao
+import com.ibrahimcanerdogan.valorantguideapp.data.database.weapon.WeaponDao
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.AgentLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasourceImpl.AgentLocalDataSourceImpl
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasourceImpl.MapLocalDataSourceImpl
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponLocalDataSource
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasourceImpl.WeaponLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,5 +33,13 @@ class LocalDataModule {
         mapDao: MapDao
     ): MapLocalDataSource {
         return MapLocalDataSourceImpl(mapDao)
+    }
+
+    @Singleton
+    @Provides
+    fun provideWeaponLocalDataSource(
+        weaponDao: WeaponDao
+    ): WeaponLocalDataSource {
+        return WeaponLocalDataSourceImpl(weaponDao)
     }
 }

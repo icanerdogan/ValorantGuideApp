@@ -12,6 +12,16 @@ import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentVoiceLine
 import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapCallout
 import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapData
 import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapLocation
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.WeaponData
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.shop.WeaponShop
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.skin.SkinChroma
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.skin.SkinLevel
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.skin.WeaponSkin
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.stats.StatAds
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.stats.StatAirBurst
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.stats.StatAltShotgun
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.stats.StatDamageRange
+import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.stats.WeaponStat
 
 class Converters {
     private val gson = Gson()
@@ -136,5 +146,109 @@ class Converters {
     fun toMapLocation(json: String): MapLocation {
         val type = object : TypeToken<MapLocation>() {}.type
         return gson.fromJson(json, type)
+    }
+
+    // WEAPON
+
+    @TypeConverter
+    fun fromWeaponData(weaponData: WeaponData): String {
+        return gson.toJson(weaponData)
+    }
+
+    @TypeConverter
+    fun toWeaponData(json: String): WeaponData {
+        return gson.fromJson(json, WeaponData::class.java)
+    }
+
+    @TypeConverter
+    fun fromWeaponStat(weaponStat: WeaponStat?): String {
+        return gson.toJson(weaponStat)
+    }
+
+    @TypeConverter
+    fun toWeaponStat(json: String): WeaponStat? {
+        return gson.fromJson(json, WeaponStat::class.java)
+    }
+
+    @TypeConverter
+    fun fromStatAds(statAds: StatAds): String {
+        return gson.toJson(statAds)
+    }
+
+    @TypeConverter
+    fun toStatAds(json: String): StatAds {
+        return gson.fromJson(json, StatAds::class.java)
+    }
+
+    @TypeConverter
+    fun fromStatAltShotgun(statAltShotgun: StatAltShotgun): String {
+        return gson.toJson(statAltShotgun)
+    }
+
+    @TypeConverter
+    fun toStatAltShotgun(json: String): StatAltShotgun {
+        return gson.fromJson(json, StatAltShotgun::class.java)
+    }
+
+    @TypeConverter
+    fun fromStatAirBurst(statAirBurst: StatAirBurst): String {
+        return gson.toJson(statAirBurst)
+    }
+
+    @TypeConverter
+    fun toStatAirBurst(json: String): StatAirBurst {
+        return gson.fromJson(json, StatAirBurst::class.java)
+    }
+
+    @TypeConverter
+    fun fromStatDamageRange(statDamageRange: StatDamageRange): String {
+        return gson.toJson(statDamageRange)
+    }
+
+    @TypeConverter
+    fun toStatDamageRange(json: String): StatDamageRange {
+        return gson.fromJson(json, StatDamageRange::class.java)
+    }
+
+    @TypeConverter
+    fun fromWeaponSkinList(weaponSkins: List<WeaponSkin>?): String? {
+        return gson.toJson(weaponSkins)
+    }
+
+    @TypeConverter
+    fun toWeaponSkinList(json: String?): List<WeaponSkin>? {
+        val type = object : TypeToken<List<WeaponSkin>>() {}.type
+        return gson.fromJson(json, type)
+    }
+
+    @TypeConverter
+    fun fromSkinChroma(skinChroma: SkinChroma): String {
+        return gson.toJson(skinChroma)
+    }
+
+    @TypeConverter
+    fun toSkinChroma(json: String): SkinChroma {
+        return gson.fromJson(json, SkinChroma::class.java)
+    }
+
+    @TypeConverter
+    fun fromSkinLevel(skinLevel: SkinLevel): String {
+        return gson.toJson(skinLevel)
+    }
+
+    @TypeConverter
+    fun toSkinLevel(json: String): SkinLevel {
+        return gson.fromJson(json, SkinLevel::class.java)
+    }
+
+
+    @TypeConverter
+    fun fromWeaponShop(weaponShop: WeaponShop?): String {
+        return gson.toJson(weaponShop)
+    }
+
+    @TypeConverter
+    fun toWeaponShop(json: String): WeaponShop? {
+        return gson.fromJson(json, WeaponShop::class.java)
     }
 }
