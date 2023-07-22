@@ -15,7 +15,9 @@ Agent             |  Info  | Role             |  Skills
 
 Map List             |  Map Detail
 :-------------------------:|:-------------------------:
-![map_list](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/d767dc25-deb2-4d45-9986-d47b1fbb068b)|![map_detail](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/d2cb3ff2-dd72-43db-84a6-37b62deb0caa)
+![](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/c9cd4408-297d-478d-ac04-03c234c0160f) | ![](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/8e190eca-8c97-4227-87d4-5cd8f5e2a1e0)
+
+<!--![map_list](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/d767dc25-deb2-4d45-9986-d47b1fbb068b)|![map_detail](https://github.com/icanerdogan/ValorantGuideApp/assets/52867508/d2cb3ff2-dd72-43db-84a6-37b62deb0caa)-->
 
 ## Weapon
 <p>Arm yourself with in-depth weapon knowledge. From damage statistics to fire rates and recoil patterns, get the upper hand by understanding every firearm's capabilities. Dive into a stunning array of weapon skins and stay up-to-date with the latest cosmetic additions.</p>
