@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:clickable="false"
     android:background="@color/ValorantBlack"
-    tools:context=".view.fragment.WeaponDetailFragment">
+    tools:context=".view.fragment.weapon.WeaponDetailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

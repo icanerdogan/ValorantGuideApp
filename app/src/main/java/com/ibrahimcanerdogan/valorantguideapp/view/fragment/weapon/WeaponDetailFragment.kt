@@ -1,4 +1,4 @@
-package com.ibrahimcanerdogan.valorantguideapp.view.fragment
+package com.ibrahimcanerdogan.valorantguideapp.view.fragment.weapon
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,11 +1,11 @@
-package com.ibrahimcanerdogan.valorantguideapp.view.fragment
+package com.ibrahimcanerdogan.valorantguideapp.view.fragment.map
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ibrahimcanerdogan.valorantguideapp.R
@@ -66,7 +66,8 @@ class MapDetailFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         // Hide the bottom navigation bar
-        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.GONE
+        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility =
+            View.GONE
     }
 
     companion object {

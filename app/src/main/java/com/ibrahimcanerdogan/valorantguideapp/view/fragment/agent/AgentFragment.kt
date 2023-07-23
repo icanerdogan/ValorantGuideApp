@@ -1,4 +1,4 @@
-package com.ibrahimcanerdogan.valorantguideapp.view.fragment
+package com.ibrahimcanerdogan.valorantguideapp.view.fragment.agent
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

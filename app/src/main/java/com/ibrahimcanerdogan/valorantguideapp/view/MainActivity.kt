@@ -6,10 +6,10 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import com.ibrahimcanerdogan.valorantguideapp.R
 import com.ibrahimcanerdogan.valorantguideapp.databinding.ActivityMainBinding
-import com.ibrahimcanerdogan.valorantguideapp.view.fragment.AgentFragment
-import com.ibrahimcanerdogan.valorantguideapp.view.fragment.MapsFragment
-import com.ibrahimcanerdogan.valorantguideapp.view.fragment.OtherFragment
-import com.ibrahimcanerdogan.valorantguideapp.view.fragment.WeaponFragment
+import com.ibrahimcanerdogan.valorantguideapp.view.fragment.agent.AgentFragment
+import com.ibrahimcanerdogan.valorantguideapp.view.fragment.map.MapsFragment
+import com.ibrahimcanerdogan.valorantguideapp.view.fragment.other.OtherFragment
+import com.ibrahimcanerdogan.valorantguideapp.view.fragment.weapon.WeaponFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

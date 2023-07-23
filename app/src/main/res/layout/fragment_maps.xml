@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ValorantBlack"
-    tools:context=".view.fragment.MapsFragment">
+    tools:context=".view.fragment.map.MapsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMap"
