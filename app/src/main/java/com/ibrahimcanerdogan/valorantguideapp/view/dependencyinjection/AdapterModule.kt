@@ -2,6 +2,8 @@ package com.ibrahimcanerdogan.valorantguideapp.view.dependencyinjection
 
 import com.ibrahimcanerdogan.valorantguideapp.view.adapter.agent.AgentAdapter
 import com.ibrahimcanerdogan.valorantguideapp.view.adapter.map.MapAdapter
+import com.ibrahimcanerdogan.valorantguideapp.view.adapter.weapon.WeaponAdapter
+import com.ibrahimcanerdogan.valorantguideapp.view.adapter.weapon.WeaponDamageRangeAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +24,18 @@ class AdapterModule {
     @Provides
     fun provideMapAdapter() : MapAdapter {
         return MapAdapter()
+    }
+
+    @Singleton
+    @Provides
+    fun provideWeaponAdapter() : WeaponAdapter {
+        return WeaponAdapter()
+    }
+
+    @Singleton
+    @Provides
+    fun provideWeaponDamageRangeAdapter() : WeaponDamageRangeAdapter {
+        return WeaponDamageRangeAdapter()
     }
 
 }

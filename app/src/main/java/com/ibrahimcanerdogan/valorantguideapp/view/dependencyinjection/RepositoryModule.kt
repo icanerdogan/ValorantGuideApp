@@ -6,8 +6,12 @@ import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.A
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.MapRepositoryImpl
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapRemoteDataSource
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.WeaponRepositoryImpl
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponLocalDataSource
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.agent.AgentRepository
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.map.MapRepository
+import com.ibrahimcanerdogan.valorantguideapp.domain.repository.weapon.WeaponRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,5 +38,14 @@ class RepositoryModule {
         mapLocalDataSource: MapLocalDataSource
     ) : MapRepository {
         return MapRepositoryImpl(mapRemoteDataSource, mapLocalDataSource)
+    }
+
+    @Singleton
+    @Provides
+    fun provideWeaponRepository(
+        weaponRemoteDataSource: WeaponRemoteDataSource,
+        weaponLocalDataSource: WeaponLocalDataSource
+    ) : WeaponRepository {
+        return WeaponRepositoryImpl(weaponRemoteDataSource, weaponLocalDataSource)
     }
 }

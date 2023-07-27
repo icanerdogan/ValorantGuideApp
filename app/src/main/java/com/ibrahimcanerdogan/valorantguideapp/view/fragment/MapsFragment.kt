@@ -51,7 +51,7 @@ class MapsFragment : Fragment() {
         mapAdapter.onMapItemClick = { mapData ->
             val fragment = MapDetailFragment.newInstance(
                 mapName = mapData.mapDisplayName,
-                mapCoordinate = mapData.mapCoordinates,
+                mapCoordinate = mapData.mapCoordinates ?: "",
                 mapSplashIcon = mapData.mapSplashIcon,
                 mapDisplayIcon = mapData.mapDisplayIcon
             )

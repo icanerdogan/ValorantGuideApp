@@ -1,16 +1,353 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayoutWeapon"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ValorantBlack"
+    android:layout_gravity="center"
     tools:context=".view.fragment.WeaponFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fragment_weapon_background" />
+
+    <!-- Background Image Transparent -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/BlackTransparent30"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textSize="30sp"
-        android:text="Weapon Coming Soon..." />
+        android:orientation="vertical"
+        android:layout_marginBottom="70dp">
+        <!--Rifle Item-->
+        <LinearLayout
+            android:id="@+id/llRifle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Rifle Item Title-->
+            <LinearLayout
+                android:id="@+id/linearLayoutRifleTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/valorant_font"
+                    android:textColor="@color/ValorantWhite"
+                    android:text="RIFLE"/>
+            </LinearLayout>
+            <!--Rifle Expandable Layout-->
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayoutRifle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_expanded="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRifle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ValorantPinkRed"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+        <!--Sidearm Item-->
+        <LinearLayout
+            android:id="@+id/llSidearm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Sidearm Item Title-->
+            <LinearLayout
+                android:id="@+id/linearLayoutSidearmTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/valorant_font"
+                    android:textColor="@color/ValorantWhite"
+                    android:text="SIDEARM"/>
+            </LinearLayout>
+            <!--Sidearm Expandable Layout-->
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayoutSidearm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_expanded="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewSidearm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ValorantPinkRed"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <!--Sniper Item-->
+        <LinearLayout
+            android:id="@+id/llSniper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Sniper Item Title-->
+            <LinearLayout
+                android:id="@+id/linearLayoutSniperTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/valorant_font"
+                    android:textColor="@color/ValorantWhite"
+                    android:text="SNIPER"/>
+            </LinearLayout>
+            <!--Sniper Expandable Layout-->
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayoutSniper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_expanded="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewSniper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ValorantPinkRed"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <!--Shoutgun Item-->
+        <LinearLayout
+            android:id="@+id/llShotgun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Shoutgun Item Title-->
+            <LinearLayout
+                android:id="@+id/linearLayoutShotgunTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/valorant_font"
+                    android:textColor="@color/ValorantWhite"
+                    android:text="SHOUTGUN"/>
+            </LinearLayout>
+            <!--Shoutgun Expandable Layout-->
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayoutShotgun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_expanded="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewShotgun"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ValorantPinkRed"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <!--Heavy Item-->
+        <LinearLayout
+            android:id="@+id/llHeavy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Heavy Item Title-->
+            <LinearLayout
+                android:id="@+id/linearLayoutHeavyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/valorant_font"
+                    android:textColor="@color/ValorantWhite"
+                    android:text="@string/heavy"/>
+            </LinearLayout>
+            <!--Heavy Expandable Layout-->
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayoutHeavy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_expanded="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewHeavy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ValorantPinkRed"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+        <!--SMG Item-->
+        <LinearLayout
+            android:id="@+id/llSMG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--SMG Item Title-->
+            <LinearLayout
+                android:id="@+id/linearLayoutSMGTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/valorant_font"
+                    android:textColor="@color/ValorantWhite"
+                    android:text="SMG"/>
+            </LinearLayout>
+            <!--SMG Expandable Layout-->
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayoutSMG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_expanded="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewSMG"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ValorantPinkRed"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <!--Melee Item-->
+        <LinearLayout
+            android:id="@+id/llMelee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Melee Item Title-->
+            <LinearLayout
+                android:id="@+id/linearLayoutMeleeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/valorant_font"
+                    android:textColor="@color/ValorantWhite"
+                    android:text="MELEE"/>
+            </LinearLayout>
+            <!--Melee Expandable Layout-->
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayoutMelee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_expanded="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewMelee"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:indicatorColor="@color/ValorantWhite"
+        app:indicatorSize="50dp"
+        android:indeterminate="true"
+        android:visibility="gone"/>
 </FrameLayout>
