@@ -92,12 +92,12 @@ class Converters {
 
 
     @TypeConverter
-    fun fromAgentVoiceLine(voiceLine: AgentVoiceLine): String {
+    fun fromAgentVoiceLine(voiceLine: AgentVoiceLine?): String {
         return gson.toJson(voiceLine)
     }
 
     @TypeConverter
-    fun toAgentVoiceLine(voiceLineString: String): AgentVoiceLine {
+    fun toAgentVoiceLine(voiceLineString: String): AgentVoiceLine? {
         return gson.fromJson(voiceLineString, AgentVoiceLine::class.java)
     }
 
