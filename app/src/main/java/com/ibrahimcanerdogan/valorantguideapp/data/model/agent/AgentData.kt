@@ -39,5 +39,5 @@ data class AgentData(
     @SerializedName("abilities")
     val agentAbilities: List<AgentAbility>,
     @SerializedName("voiceLine")
-    val agentVoiceLine: AgentVoiceLine
+    val agentVoiceLine: AgentVoiceLine?
 )

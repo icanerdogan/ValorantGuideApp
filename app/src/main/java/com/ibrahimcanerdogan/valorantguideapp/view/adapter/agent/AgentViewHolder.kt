@@ -140,11 +140,13 @@ class AgentViewHolder(
 
     private fun setAgentVoiceData(agentData: AgentData) {
         binding.imageViewAgentPortrait.setOnClickListener {
-            // Check if MediaPlayer is already playing
-            if (mediaPlayer?.isPlaying == true) {
-                stopMediaPlayer()
-            } else {
-                startMediaPlayer(agentData.agentVoiceLine.mediaList[0].mediaWave)
+            agentData.agentVoiceLine?.let {
+                // Check if MediaPlayer is already playing
+                if (mediaPlayer?.isPlaying == true) {
+                    stopMediaPlayer()
+                } else {
+                    startMediaPlayer(it.mediaList[0].mediaWave)
+                }
             }
         }
     }
