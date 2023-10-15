@@ -8,7 +8,7 @@ import com.ibrahimcanerdogan.valorantguideapp.R
 import com.ibrahimcanerdogan.valorantguideapp.databinding.ActivityMainBinding
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.AgentFragment
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.MapsFragment
-import com.ibrahimcanerdogan.valorantguideapp.view.fragment.OtherFragment
+import com.ibrahimcanerdogan.valorantguideapp.view.fragment.other.OtherFragment
 import com.ibrahimcanerdogan.valorantguideapp.view.fragment.WeaponFragment
 import dagger.hilt.android.AndroidEntryPoint
 
