@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_maps" />
     <fragment
         android:id="@+id/otherFragment"
-        android:name="com.ibrahimcanerdogan.valorantguideapp.view.fragment.OtherFragment"
+        android:name="com.ibrahimcanerdogan.valorantguideapp.view.fragment.other.OtherFragment"
         android:label="fragment_other"
         tools:layout="@layout/fragment_other" />
     <fragment
