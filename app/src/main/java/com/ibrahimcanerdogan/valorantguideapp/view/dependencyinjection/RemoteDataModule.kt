@@ -5,6 +5,8 @@ import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.A
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasourceImpl.AgentRemoteDataSourceImpl
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasourceImpl.MapRemoteDataSourceImpl
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.other.armor.datasource.ArmorRemoteDataSource
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.other.armor.datasourceImpl.ArmorRemoteDataSourceImpl
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasourceImpl.WeaponRemoteDataSourceImpl
 import dagger.Module
@@ -39,5 +41,13 @@ class RemoteDataModule {
         apiService: APIService
     ) : WeaponRemoteDataSource {
         return WeaponRemoteDataSourceImpl(apiService)
+    }
+
+    @Singleton
+    @Provides
+    fun provideArmorRemoteDataSource(
+        apiService: APIService
+    ) : ArmorRemoteDataSource {
+        return ArmorRemoteDataSourceImpl(apiService)
     }
 }

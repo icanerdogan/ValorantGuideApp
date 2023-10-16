@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardItemArmor"
     android:layout_width="match_parent"
     android:layout_height="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="20dp"
-    app:cardCornerRadius="15dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="0dp"
-    app:strokeWidth="2dp"
-    app:strokeColor="@color/ValorantPinkRed"
-    android:background="@color/ColorPalette1Middle">
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/ValorantWhite">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itemArmorDisplayIcon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/example_armor"
+        android:background="@color/ValorantMatRed"
+        android:padding="50dp"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
@@ -18,19 +26,13 @@
         android:layout_gravity="end"
         android:backgroundTint="@color/White"/>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/itemArmorDisplayIcon"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/example_armor"/>
-
     <LinearLayout
         android:id="@+id/itemArmorLinearLayoutInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:background="@color/BlackTransparent80">
+        android:background="@drawable/transparent_to_black_rtl">
         <TextView
             android:id="@+id/itemArmorDisplayName"
             android:layout_width="match_parent"
