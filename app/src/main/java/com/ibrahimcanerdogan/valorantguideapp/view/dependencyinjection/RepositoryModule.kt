@@ -6,11 +6,15 @@ import com.ibrahimcanerdogan.valorantguideapp.data.repository.agent.datasource.A
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.MapRepositoryImpl
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.map.datasource.MapRemoteDataSource
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.other.armor.ArmorRepositoryImpl
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.other.armor.datasource.ArmorLocalDataSource
+import com.ibrahimcanerdogan.valorantguideapp.data.repository.other.armor.datasource.ArmorRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.WeaponRepositoryImpl
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponLocalDataSource
 import com.ibrahimcanerdogan.valorantguideapp.data.repository.weapon.datasource.WeaponRemoteDataSource
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.agent.AgentRepository
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.map.MapRepository
+import com.ibrahimcanerdogan.valorantguideapp.domain.repository.other.armor.ArmorRepository
 import com.ibrahimcanerdogan.valorantguideapp.domain.repository.weapon.WeaponRepository
 import dagger.Module
 import dagger.Provides
@@ -47,5 +51,14 @@ class RepositoryModule {
         weaponLocalDataSource: WeaponLocalDataSource
     ) : WeaponRepository {
         return WeaponRepositoryImpl(weaponRemoteDataSource, weaponLocalDataSource)
+    }
+
+    @Singleton
+    @Provides
+    fun provideArmorRepository(
+        armorRemoteDataSource: ArmorRemoteDataSource,
+        armorLocalDataSource: ArmorLocalDataSource
+    ) : ArmorRepository {
+        return ArmorRepositoryImpl(armorRemoteDataSource, armorLocalDataSource)
     }
 }

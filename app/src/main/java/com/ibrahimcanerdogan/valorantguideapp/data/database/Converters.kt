@@ -12,6 +12,7 @@ import com.ibrahimcanerdogan.valorantguideapp.data.model.agent.AgentVoiceLine
 import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapCallout
 import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapData
 import com.ibrahimcanerdogan.valorantguideapp.data.model.map.MapLocation
+import com.ibrahimcanerdogan.valorantguideapp.data.model.other.armor.ArmorShopData
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.WeaponData
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.shop.WeaponShop
 import com.ibrahimcanerdogan.valorantguideapp.data.model.weapon.skin.SkinChroma
@@ -251,4 +252,20 @@ class Converters {
     fun toWeaponShop(json: String): WeaponShop? {
         return gson.fromJson(json, WeaponShop::class.java)
     }
+
+    // OTHER
+
+    // Armor
+
+    @TypeConverter
+    fun fromArmorShopData(armorShopData: ArmorShopData?): String {
+        return gson.toJson(armorShopData)
+    }
+
+    @TypeConverter
+    fun toArmorShopData(data: String): ArmorShopData? {
+        val listType = object : TypeToken<ArmorShopData>() {}.type
+        return gson.fromJson(data, listType)
+    }
+
 }
