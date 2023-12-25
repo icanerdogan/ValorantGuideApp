@@ -1,7 +1,7 @@
 # Valorant Guide App
-Google Play           |  App Gallery
-:-------------------------:|:-------------------------:
-<a href="https://play.google.com/store/apps/details?id=com.ibrahimcanerdogan.valorantguideapp"><img width="90" height="90" src="https://img.icons8.com/?size=512&id=L1ws9zn2uD01&format=png"/></a> | <a href="https://appgallery.huawei.com/app/C108803965"><img width="90" height="90" src="https://seeklogo.com/images/H/huawei-appgallery-logo-A801F4AE11-seeklogo.com.png"/></a>
+Google Play           |  App Gallery |  Free Udemy Course
+:-------------------------:|:-------------------------:|:-------------------------:
+<a href="https://play.google.com/store/apps/details?id=com.ibrahimcanerdogan.valorantguideapp"><img width="90" height="90" src="https://img.icons8.com/?size=512&id=L1ws9zn2uD01&format=png"/></a> | <a href="https://appgallery.huawei.com/app/C108803965"><img width="90" height="90" src="https://seeklogo.com/images/H/huawei-appgallery-logo-A801F4AE11-seeklogo.com.png"/></a> | <a href="https://www.udemy.com/course/valorant-api-app/"><img width="90" height="90" src="https://pageflows.com/media/logos/udemy.png"/></a>
 
 <p>Are you ready to take your Valorant game to the next level? Look no further! Valorant Professional Guide is your go-to resource for a comprehensive and immersive Valorant experience. Embark on an epic journey through the immersive world of Valorant with Valorant Vault! This comprehensive companion app is your one-stop destination for all things Valorant, offering a treasure trove of valuable information to elevate your gameplay. </p>
 
