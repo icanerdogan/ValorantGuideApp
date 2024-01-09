@@ -133,6 +133,9 @@ dependencies {
     // Splash
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
 
+    // Lottie
+    implementation 'com.airbnb.android:lottie:6.1.0'
+
     // Test
     // Core library
     androidTestImplementation('androidx.test:core:1.5.0')

@@ -6,6 +6,7 @@
     <color name="ValorantDarkRed">#53212B</color>
     <color name="ValorantWhite">#FFFBF5</color>
     <color name="ValorantBlack">#000000</color>
+    <color name="ValorantBlue">#000C66</color>
     <color name="ValorantTransparent">#00FFFFFF</color>
     <!--Color Palette 1 -->
     <color name="ColorPalette1Dark">#311D3F</color>

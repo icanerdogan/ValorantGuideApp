@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/ValorantMatRed">
 
-    <TextView
-        android:id="@+id/agentName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +16,6 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:layout_gravity="center"
-            android:layout_marginBottom="70dp"
             android:src="@color/ValorantMatRed"/>
     </LinearLayout>
 
@@ -35,8 +29,7 @@
             android:id="@+id/imageViewAgentPortrait"
             android:layout_width="match_parent"
             android:layout_height="500dp"
-            android:scaleType="centerCrop"
-            android:layout_marginBottom="40dp"
+            android:scaleType="center"
             android:layout_gravity="center"
             android:src="@color/ValorantMatRed"/>
 
@@ -49,35 +42,6 @@
             android:layout_marginStart="10dp"
             android:src="@drawable/icon_info"
             android:background="@android:color/transparent"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginBottom="50dp">
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/buttonRole"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:layout_gravity="bottom"
-                android:scaleType="centerCrop"
-                android:src="@drawable/icon_role"
-                android:background="@android:color/transparent"/>
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/buttonAbility"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:layout_gravity="bottom"
-                android:scaleType="centerCrop"
-                android:src="@drawable/icon_flame"
-                android:background="@android:color/transparent"/>
-
-        </LinearLayout>
 
         <include android:id="@+id/agentItemInfo"
             layout="@layout/item_agent_info"

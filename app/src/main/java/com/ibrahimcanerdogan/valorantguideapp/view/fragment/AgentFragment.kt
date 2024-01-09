@@ -1,6 +1,8 @@
 package com.ibrahimcanerdogan.valorantguideapp.view.fragment
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +15,8 @@ import com.ibrahimcanerdogan.valorantguideapp.view.adapter.agent.AgentAdapter
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.agent.AgentViewModel
 import com.ibrahimcanerdogan.valorantguideapp.view.viewmodel.agent.AgentViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -42,6 +46,12 @@ class AgentFragment : Fragment() {
             adapter = agentAdapter
         }
         setAgentData()
+
+        // Animation
+        binding.lottieAnimation.apply {
+            visibility = View.VISIBLE
+            playAnimation()
+        }
     }
 
     private fun setAgentData() {

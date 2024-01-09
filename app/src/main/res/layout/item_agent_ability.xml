@@ -4,25 +4,25 @@
     android:id="@+id/frameLayoutItemAgentAbility"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/BlackTransparent70">
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:strokeColor="@color/ValorantWhite"
-        app:strokeWidth="1dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="30dp"
-        app:cardCornerRadius="20dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="2dp"
-            android:background="@color/ValorantPinkRed">
+            android:layout_gravity="center"
+            app:strokeColor="@color/ValorantWhite"
+            app:strokeWidth="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/ValorantBlack">
 
             <!--Ability - "-->
             <LinearLayout
@@ -34,7 +34,8 @@
                 <LinearLayout
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
                     <!-- Ability Name - 1-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityName1"
@@ -61,31 +62,34 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:padding="10dp">
 
                     <!-- Ability Description - 1-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityDescription1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginEnd="2dp"
                         android:fontFamily="@font/chakrapetch_regular"
                         android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/ValorantWhite"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:scrollbars = "vertical" />
                 </FrameLayout>
             </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/BlackTransparent30"
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"/>
-
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:strokeColor="@color/ValorantWhite"
+            app:strokeWidth="1dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/ValorantBlack">
             <!--Ability - 2-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,7 +100,8 @@
                 <LinearLayout
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
                     <!-- Ability Name - 2-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityName2"
@@ -123,30 +128,35 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:padding="10dp">
 
                     <!-- Ability Description - 2-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityDescription2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginEnd="2dp"
                         android:fontFamily="@font/chakrapetch_regular"
                         android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/ValorantWhite"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:scrollbars = "vertical" />
                 </FrameLayout>
             </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/BlackTransparent30"
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:strokeColor="@color/ValorantWhite"
+            app:strokeWidth="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/ValorantBlack">
 
             <!--Ability - 3-->
             <LinearLayout
@@ -158,7 +168,8 @@
                 <LinearLayout
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
                     <!-- Ability Name - 3-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityName3"
@@ -184,31 +195,35 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content">
 
                     <!-- Ability Description - 3-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityDescription3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:paddingEnd="2dp"
                         android:fontFamily="@font/chakrapetch_regular"
                         android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/ValorantWhite"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:scrollbars = "vertical" />
                 </FrameLayout>
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/BlackTransparent30"
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:strokeColor="@color/ValorantWhite"
+            app:strokeWidth="1dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/ValorantBlack">
 
             <!--Ability - 4-->
             <LinearLayout
@@ -220,7 +235,8 @@
                 <LinearLayout
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
                     <!-- Ability Name - 4-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityName4"
@@ -247,23 +263,26 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:padding="10dp">
 
                     <!-- Ability Description - 4-->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textViewAgentAbilityDescription4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:paddingEnd="2dp"
                         android:fontFamily="@font/chakrapetch_regular"
                         android:text="ACTIVATE to prepare a gust of wind for a limited time. RE-USE the wind to propel Jett in the direction she is moving. If Jett is standing still, she propels forward."
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/ValorantWhite"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:scrollbars = "vertical" />
                 </FrameLayout>
             </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
 </FrameLayout>

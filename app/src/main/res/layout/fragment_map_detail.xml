@@ -11,8 +11,7 @@
         android:id="@+id/imageViewMapSplash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ascent" />
+        android:scaleType="centerCrop" />
 
     <View
         android:layout_width="match_parent"
@@ -53,15 +52,14 @@
         android:id="@+id/imageViewMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/map_example" />
+        android:scaleType="fitCenter"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
         android:gravity="center"
-        android:text="@string/turn_off_map_detail"
+        android:text="Tap anywhere to turn off the screen!"
         android:textSize="10sp"
         android:textColor="@color/ValorantWhite"
         android:fontFamily="@font/chakrapetch_regular"/>

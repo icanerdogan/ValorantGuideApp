@@ -13,8 +13,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:cardCornerRadius="20dp"
-        app:strokeColor="@color/ValorantWhite"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/ValorantPinkRed"
         app:strokeWidth="1dp">
 
         <!-- Map List Icon -->
@@ -22,8 +22,7 @@
             android:id="@+id/imageViewListMapIcon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/maplistviewicon"/>
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:layout_width="match_parent"

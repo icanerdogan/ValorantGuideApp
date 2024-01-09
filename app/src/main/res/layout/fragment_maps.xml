@@ -8,13 +8,6 @@
     android:background="@color/ValorantBlack"
     tools:context=".view.fragment.MapsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMap"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="70dp"/>
-
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progressIndicator"
         android:layout_width="wrap_content"
@@ -24,4 +17,12 @@
         app:indicatorSize="50dp"
         android:indeterminate="true"
         android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="70dp"/>
+
 </FrameLayout>
